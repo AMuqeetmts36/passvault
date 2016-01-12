@@ -1,0 +1,14 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="passvault" EntryPointType="passvault.App" RuntimeVersion="6.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="passvault" Source="passvault.dll" />
+    <AssemblyPart x:Name="CryptSharp" Source="CryptSharp.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Data" Source="Telerik.Windows.Controls.Data.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Input" Source="Telerik.Windows.Controls.Input.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Controls.Primitives" Source="Telerik.Windows.Controls.Primitives.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Core" Source="Telerik.Windows.Core.dll" />
+    <AssemblyPart x:Name="Telerik.Windows.Data" Source="Telerik.Windows.Data.dll" />
+    <AssemblyPart x:Name="System.Windows.Interactivity" Source="System.Windows.Interactivity.dll" />
+  </Deployment.Parts>
+</Deployment>

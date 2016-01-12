@@ -1,0 +1,62 @@
+﻿<phone:PhoneApplicationPage xmlns:Controls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives" 
+    x:Class="passvault.interBank"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:telerikInput="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="ab_add"  IconUri="/Assets/AppBar/add.png" Text="login" Click="ab_add_Click"/>
+            <shell:ApplicationBarIconButton x:Name="ab_cancel"  IconUri="/Assets/AppBar/cancel.png" Text="cancel" Click="ab_cancel_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Title="Pass Vault - Internet Banking">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="list">
+                <Grid>
+                    <phone:LongListSelector x:Name="iBankList" LayoutMode="List" SelectionChanged="iBankList_SelectionChanged">
+                        <phone:LongListSelector.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding bankName}" FontSize="35"/>
+                                    <TextBlock Text="{Binding userName}" FontSize="18"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </phone:LongListSelector.ItemTemplate>
+
+                    </phone:LongListSelector>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="add">
+                <Grid>
+                    <ScrollViewer>
+                        <StackPanel x:Name="startDate_dtPicker">
+                            <Controls:RadTextBox x:Name="bankName_txtBox" Watermark="Bank Name" InputScope="Text" />
+                            <Controls:RadTextBox x:Name="emailAddress_txtBox" Watermark="e-mail" InputScope="EmailUserName" />
+                            <Controls:RadTextBox x:Name="acctNumber_txtBox" Watermark="Account Number" InputScope="Number" />
+                            <Controls:RadTextBox x:Name="userName_txtBox" Watermark="User Name" InputScope="Text" />
+                            <Controls:RadPasswordBox x:Name="password_pswdBox" Watermark="Password" />
+                            <Controls:RadTextBox x:Name="mobileNumber_txtBox" Watermark="Cell Number" InputScope="Number" />
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+    
+</phone:PhoneApplicationPage>

@@ -1,0 +1,42 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerikPrimitives="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Primitives"
+    x:Class="passvault.types"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="Pass Vault" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="categories" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10*"/>
+            </Grid.RowDefinitions>
+            <telerikPrimitives:RadHubTile x:Name="hubTile_website" Width="Auto" Height="Auto" Margin="10" UpdateInterval="0" Message="Websites" Grid.Row="0" Tap="hubTile_website_Tap" />
+            <telerikPrimitives:RadHubTile x:Name="hubTile_credit" Grid.Row="1" Width="Auto" Height="Auto" Margin="10" UpdateInterval="0" Message="Credit Cards" Tap="hubTile_credit_Tap" />
+            <telerikPrimitives:RadHubTile x:Name="hubTile_ibanking" Grid.Row="2" Width="Auto" Height="Auto" Margin="10" UpdateInterval="0" Message="Internet Banking" Tap="hubTile_ibanking_Tap" />
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
